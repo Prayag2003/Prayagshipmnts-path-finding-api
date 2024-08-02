@@ -48,8 +48,19 @@ const registerRoad = asyncHandler(async (req, res) => {
         )
 })
 
+const getAllRoads = asyncHandler(async (req, res) => {
+    const roads = await Road.find();
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            roads,
+            "All roads retrieved successfully!"
+        ));
+});
 
 export {
+    getAllRoads,
     registerRoad
 }
+
 

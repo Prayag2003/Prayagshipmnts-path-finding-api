@@ -28,4 +28,5 @@ app.use("/api/v1/road", roadRouter)
 import locationRouter from "./routes/location.routes.js";
 app.use("/api/v1/location", locationRouter)
 
-export { app }
+export { app };
+

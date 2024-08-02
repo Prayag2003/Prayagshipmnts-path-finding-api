@@ -47,7 +47,13 @@ const registerLocation = asyncHandler(async (req, res) => {
         )
 })
 
+const getAllLocations = asyncHandler(async (req, res) => {
+    const locations = await Location.find();
+    return res.status(200).json(new ApiResponse(200, locations, "All locations retrieved successfully!"));
+});
+
 export {
+    getAllLocations,
     registerLocation
 }
 
