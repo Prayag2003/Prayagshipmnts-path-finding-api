@@ -58,9 +58,27 @@ const getAllRoads = asyncHandler(async (req, res) => {
         ));
 });
 
+
+const getRoadByName = asyncHandler(async (req, res) => {
+    const { name } = req.params;
+
+    const road = await Road.findOne({ name });
+
+    if (!road) {
+        throw new ApiError(404, "Road not found");
+    }
+
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            road,
+            "Road retrieved successfully!"
+        )
+    );
+});
+
 export {
     getAllRoads,
-    registerRoad
+    registerRoad,
+    getRoadByName
 }
-
-
