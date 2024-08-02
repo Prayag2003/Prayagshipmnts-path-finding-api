@@ -4,7 +4,7 @@
 
 This backend system is designed for monitoring real-time traffic conditions and providing optimal pathfinding solutions.
 
-## Postman Live Link:
+## Postman Live Link: ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/lively-comet-211587/workspace/shipmnts/request/26668533-c183da57-5a03-46a3-9638-b11d7f2d7359?action=share&creator=26668533&ctx=documentation)
 
@@ -116,5 +116,3 @@ This backend system is designed for monitoring real-time traffic conditions and 
 
 - **Endpoint:** `GET /api/v1/report/traffic`
 - **Response:** CSV file with traffic conditions for all roads.
-
-## Project Structure
