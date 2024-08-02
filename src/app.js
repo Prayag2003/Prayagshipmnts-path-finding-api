@@ -20,5 +20,9 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
+// ROUTES for Roads
+import roadRouter from "./routes/road.routes.js"
+app.use("/api/v1/road", roadRouter)
+
 
 export { app }
