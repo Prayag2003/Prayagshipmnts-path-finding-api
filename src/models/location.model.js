@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const locationSchema = new Schema({
     name: {
-        type: Number,
+        type: String,
         index: true
     },
     latitude: {

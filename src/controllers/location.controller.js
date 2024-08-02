@@ -14,7 +14,7 @@ const registerLocation = asyncHandler(async (req, res) => {
     const { name, latitude, longitude } = req.body
 
     // Validation of the fields
-    const fields = [name, longitude, latitude];
+    const fields = [longitude, latitude];
     const areAllFieldsValid = fields.every(
         (field) => typeof field === "number" && !isNaN(field)
     );
@@ -24,16 +24,16 @@ const registerLocation = asyncHandler(async (req, res) => {
     }
 
     const existingRoad = await Location.findOne({
-        $or: [{ name }, { latitude }]
+        $or: [{ latitude }, { longitude }]
     })
 
     if (existingRoad) {
-        throw new ApiError(409, "Location with endLocationId or startLocationId already exists")
+        throw new ApiError(409, "Location with latitude or longitude already exists")
     }
 
     const road = await Location.create({
-        startLocationId: name,
-        endLocationId: latitude,
+        name: name,
+        latitude: latitude,
         longitude: longitude,
     })
 
@@ -46,7 +46,6 @@ const registerLocation = asyncHandler(async (req, res) => {
             )
         )
 })
-
 
 export {
     registerLocation
