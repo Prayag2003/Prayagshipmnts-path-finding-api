@@ -28,5 +28,17 @@ app.use("/api/v1/road", roadRouter)
 import locationRouter from "./routes/location.routes.js";
 app.use("/api/v1/location", locationRouter)
 
+// ROUTES for Shortest Path
+import shortestPathRouter from "./routes/shortestPath.routes.js";
+app.use("/api/v1/", shortestPathRouter)
+
+// ROUTES for Traffic Condition
+import trafficConditionRouter from "./routes/trafficConditionRouter.routes.js";
+app.use('/api/v1/road/:id/traffic-condition', trafficConditionRouter);
+
+// ROUTES for Traffic Report
+import generateReportRouter from "./routes/generateReport.routes.js";
+app.use('/api/v1/report/traffic', generateReportRouter);
+
 export { app };
 
